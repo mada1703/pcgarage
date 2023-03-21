@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import pages.BasePage;
 
 
-
 public class AutentificarePage extends BasePage {
     public static final Logger LOG = LoggerFactory.getLogger(AutentificarePage.class);
     public static AutentificarePage instance;
@@ -15,7 +14,7 @@ public class AutentificarePage extends BasePage {
 
     public static AutentificarePage getInstance(){
         if (instance == null){
-            instance=new AutentificarePage();
+            instance = new AutentificarePage();
         }
         return instance;
     }

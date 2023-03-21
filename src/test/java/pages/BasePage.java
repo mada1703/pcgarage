@@ -26,5 +26,19 @@ public class BasePage {
         driver.quit();
     }
 
+    public static String returnBaseUrl(){
+        return "https://www.pcgarage.ro/";
+    }
+
+    public static String getBaseUrl(){
+        String baseUrl = returnBaseUrl();
+        if (baseUrl != null){
+            return  baseUrl.replace("Index.html", "");
+        }
+        return baseUrl;
+    }
+
+
+
 
 }

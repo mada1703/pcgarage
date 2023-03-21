@@ -8,7 +8,7 @@ import pages.AutentificarePage.AutentificarePage;
 
 public class BaseTest {
 
-    public AutentificarePage AutentificarePage=AutentificarePage.getInstance();
+    public AutentificarePage autentificarePage= AutentificarePage.getInstance();
 
     @BeforeSuite
     public void init(){
