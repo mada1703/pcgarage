@@ -13,7 +13,7 @@ public class BasePage {
         LOG.info("Start test");
         System.setProperty("webdriver.chrome.driver", "C://Webdrivers/chromedriver111.exe");
         driver = new ChromeDriver();
-        String url = "https://www.pcgarage.ro/";
+        String url = "https://www.cel.ro//";
         driver.get(url);
 
         LOG.info("Open browser maximize");
@@ -21,19 +21,19 @@ public class BasePage {
 
     }
 
-    public static void tearDown(){
-        LOG.info("Close the browser");
-        driver.quit();
-    }
+//    public static void tearDown(){
+//        LOG.info("Close the browser");
+//        driver.quit();
+//    }
 
     public static String returnBaseUrl(){
-        return "https://www.pcgarage.ro/";
+        return "https://www.cel.ro/";
     }
 
     public static String getBaseUrl(){
         String baseUrl = returnBaseUrl();
         if (baseUrl != null){
-            return  baseUrl.replace("Index.html", "");
+            return  baseUrl.replace("", "");
         }
         return baseUrl;
     }

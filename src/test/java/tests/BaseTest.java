@@ -1,9 +1,8 @@
 package tests;
 
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import pages.BasePage;
 import pages.AutentificarePage.AutentificarePage;
+import pages.BasePage;
 
 
 public class BaseTest {
@@ -15,8 +14,8 @@ public class BaseTest {
         BasePage.setUp();
     }
 
-    @AfterSuite
-    public void tearDown(){
-        BasePage.tearDown();
-    }
+//    @AfterSuite
+//    public void tearDown(){
+//        BasePage.tearDown();
+//    }
 }
