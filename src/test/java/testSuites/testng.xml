@@ -5,6 +5,8 @@
         <classes>
             <class name="tests.AutentificareTest.AutentificareTest">
             </class>
+            <class name="tests.ComandaTest.ComandaTest">
+            </class>
         </classes>
     </test>
 

@@ -111,4 +111,14 @@ public class AutentificarePage extends BasePage {
         driver.findElement(creare).click();
     }
 
+    public void clickBack (){
+        LOG.info("Clicking back once in browser");
+        driver.navigate().back();
+    }
+
+    public void click2Back (){
+        LOG.info("Clicking back twice in browser");
+        driver.navigate().back();
+    }
+
 }

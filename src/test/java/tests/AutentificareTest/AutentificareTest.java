@@ -63,6 +63,12 @@ public class AutentificareTest extends BaseTest {
         LOG.info("Click Creeaza cont button");
         autentificarePage.clickCreearebutton();
 
+        LOG.info("Navigate no1 back");
+        autentificarePage.clickBack();
+
+        LOG.info("Navigate no2 back");
+        autentificarePage.click2Back();
+
 
 
 
