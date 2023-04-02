@@ -88,11 +88,7 @@ public class AutentificarePage extends BasePage {
         LOG.info("Select judet");
         Select newJudet = new Select(driver.findElement(judet));
         newJudet.selectByValue(Judet);
-        try{
-            Thread.sleep(250);
-        } catch (InterruptedException e){
-            e.printStackTrace();
-        }
+        sleep(250);
     }
 
     public void selectOras(String Oras){

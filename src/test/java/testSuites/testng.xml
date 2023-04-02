@@ -7,6 +7,8 @@
             </class>
             <class name="tests.ComandaTest.ComandaTest">
             </class>
+            <class name="tests.MainPageTest.MainPageTest">
+            </class>
         </classes>
     </test>
 

@@ -27,7 +27,7 @@ public class ComandaPage extends BasePage {
     private By decreasing = By.xpath("//option[@value='pretd']");
     private By iphone = By.xpath("//img[@alt='Telefon Mobil Apple iPhone 14 Pro Dual SIM 5G 6GB 1TB Deep Purple ']");
     private By cumpara = By.xpath("//div[@class='specialButtons']//div[@title='Cumpara Telefon Mobil Apple iPhone 14 Pro Dual SIM 5G 6GB 1TB Deep Purple']");
-    private By deschidere = By.id("deschide_colet_7465329fcb47dd6f7cfa483128406b19ddf649b");
+    private By deschidere = By.id("deschide_colet_74653290966214266f06aaebd94379b2b06c505");
     private By bucati = By.xpath("//select[@name='cart_quantity[]']");
     private By inputnume = By.id("fullname");
     private By inputtelehponenumber = By.id("telephone");
@@ -133,27 +133,20 @@ public class ComandaPage extends BasePage {
     public void clickcumpara(){
         LOG.info("Click adauga in cos button");
         driver.findElement(cumpara).click();
+        sleep(1000);
     }
 
     public void clickdeschiderecolet(){
         LOG.info("Click deschidere colet checkmark");
         driver.findElement(deschidere).click();
-        try{
-            Thread.sleep(1000);
-        } catch (InterruptedException e){
-            e.printStackTrace();
-        }
+        sleep(1000);
     }
 
     public void selectBucati(String selectBucati){
         LOG.info("Select nr bucati dropdown menu");
         Select newBucati = new Select(driver.findElement(bucati));
         newBucati.selectByValue(selectBucati);
-        try{
-            Thread.sleep(500);
-        } catch (InterruptedException e){
-            e.printStackTrace();
-        }
+        sleep(500);
     }
 
     public void scrolldown3(){
@@ -192,11 +185,7 @@ public class ComandaPage extends BasePage {
         LOG.info("Select judet dropdown menu");
         Select newJudet = new Select(driver.findElement(judet));
         newJudet.selectByValue(selectJudet);
-        try{
-            Thread.sleep(1000);
-        } catch (InterruptedException e){
-            e.printStackTrace();
-        }
+        sleep(1000);
     }
 
     public void selectLocalitate(String selectLocalitate){
@@ -209,11 +198,7 @@ public class ComandaPage extends BasePage {
         LOG.info("Scroll down to metoda de plata");
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,500)");
-        try{
-            Thread.sleep(1000);
-        } catch (InterruptedException e){
-            e.printStackTrace();
-        }
+        sleep(1000);
     }
 
     public void clickramburs(){
@@ -242,16 +227,4 @@ public class ComandaPage extends BasePage {
         LOG.info("Click declaratie 18 ani");
         driver.findElement(declaratie).click();
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }
