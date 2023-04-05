@@ -45,6 +45,9 @@ public class MainPageTest extends BaseTest {
         LOG.info("Navigate back to main page from searched product");
         mainPage.clickSearchBack();
 
+        LOG.info("Slide through the images from the main page");
+        mainPage.clickSlidingImages();
+
         LOG.info("Hover on laptopuri menu button");
         mainPage.hoverOnLaptopuriMenu();
 
@@ -237,12 +240,6 @@ public class MainPageTest extends BaseTest {
         LOG.info("Switch to new window");
         mainPage.clickpartener();
         mainPage.switchToNewTabWindow();
-
-        LOG.info("Scroll up to categorii");
-        mainPage.scrollup();
-
-        LOG.info("Scroll down to produsele zilei icon");
-        mainPage.scrolldown2();
 
         LOG.info("Play the first video");
         mainPage.clickfirstvideo();

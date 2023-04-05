@@ -31,6 +31,11 @@ public class MainPage extends BasePage {
     private final By slidingimages = By.xpath("//li[@class='lslide active']//a[@rel='nofollow']//img[@loading='lazy']");
     private By insertsearch = By.id("keyword");
     private By clicksearch = By.xpath("//button[@aria-label='Cauta']//i[@class='icon-search']");
+    private By clickimage = By.xpath("//div[@id='slides-box']//ul[@class='lSPager lSGallery']/li[1]");
+    private By clickimage2 = By.xpath("//div[@id='slides-box']//ul[@class='lSPager lSGallery']/li[2]");
+    private By clickimage3 = By.xpath("//div[@id='slides-box']//ul[@class='lSPager lSGallery']/li[3]");
+    private By clickimage4 = By.xpath("//div[@id='slides-box']//ul[@class='lSPager lSGallery']/li[4]");
+    private By clickimage5 = By.xpath("//div[@id='slides-box']//ul[@class='lSPager lSGallery']/li[5]");
     private By laptopurimenu = By.xpath("//a[normalize-space()='Laptopuri, Tablete & Software']");
     private By tablete = By.xpath("//a[@class='subcategTitle'][normalize-space()='Tablete']");
     private By telefoanemenu = By.xpath("//a[normalize-space()='Telefoane Mobile & Gadget']");
@@ -72,7 +77,8 @@ public class MainPage extends BasePage {
     private By resigilate = By.xpath("//div[normalize-space()='Vezi mai multe resigilate']");
     private By refurbished = By.xpath("//div[normalize-space()='Vezi produse refurbished']");
     private By partener = By.xpath("//a[@rel='nofollow noopener']");
-    private By firstvideo = By.id("movie_player");
+    private By firstvideo = By.xpath("//div[@class='video']/iframe[@src='https://www.youtube.com/embed?list=UU3vxBxz3JJWDHhRTXTi-XJw&playnext=1&index=1']");
+
     public boolean isLogoDisplayed() {
         LOG.info("Verify if logo is displayed");
         return driver.findElement(logo).isDisplayed();
@@ -103,7 +109,7 @@ public class MainPage extends BasePage {
         return driver.findElement(slidingimages).isDisplayed();
     }
 
-    public void typeInSearchField(String product){
+    public void typeInSearchField(String product) {
         LOG.info("Type in searched product");
         driver.findElement(insertsearch).sendKeys(product);
         driver.findElement(clicksearch).click();
@@ -113,6 +119,20 @@ public class MainPage extends BasePage {
     public void clickSearchBack() {
         LOG.info("Clicking back from searched item in main page");
         driver.navigate().back();
+    }
+
+    public void clickSlidingImages(){
+        LOG.info("Click second image button");
+        driver.findElement(clickimage2).click();
+        sleep(500);
+        driver.findElement(clickimage3).click();
+        sleep(500);
+        driver.findElement(clickimage4).click();
+        sleep(500);
+        driver.findElement(clickimage5).click();
+        sleep(500);
+        driver.findElement(clickimage).click();
+        sleep(500);
     }
 
     public void hoverOnLaptopuriMenu() {
@@ -439,13 +459,13 @@ public class MainPage extends BasePage {
         driver.navigate().back();
     }
 
-    public void scrolldown(){
+    public void scrolldown() {
         LOG.info("Scroll down to prdousele zilei logo");
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,1500)");
     }
 
-    public void clickproduselezilei(){
+    public void clickproduselezilei() {
         LOG.info("Click produsele zilei button");
         driver.findElement(produseleZilei).click();
     }
@@ -455,7 +475,7 @@ public class MainPage extends BasePage {
         driver.navigate().back();
     }
 
-    public void clickultimelebucati(){
+    public void clickultimelebucati() {
         LOG.info("Click ultimele bucati button");
         driver.findElement(ultimeleBucati).click();
     }
@@ -465,7 +485,7 @@ public class MainPage extends BasePage {
         driver.navigate().back();
     }
 
-    public void clickresigilate(){
+    public void clickresigilate() {
         LOG.info("Click resigilate button");
         driver.findElement(resigilate).click();
     }
@@ -475,7 +495,7 @@ public class MainPage extends BasePage {
         driver.navigate().back();
     }
 
-    public void clickrefurbished(){
+    public void clickrefurbished() {
         LOG.info("Click refurbished button");
         driver.findElement(refurbished).click();
     }
@@ -485,16 +505,16 @@ public class MainPage extends BasePage {
         driver.navigate().back();
     }
 
-    public void clickpartener(){
+    public void clickpartener() {
         LOG.info("Click Vreau sa devin partener button");
         driver.findElement(partener).click();
     }
 
-    public void switchToNewTabWindow(){
+    public void switchToNewTabWindow() {
         LOG.info("Switch to new tab windows");
         String originalWindow = driver.getWindowHandle();
-        for (String windowHandle : driver.getWindowHandles()){
-            if (!originalWindow.contentEquals(windowHandle)){
+        for (String windowHandle : driver.getWindowHandles()) {
+            if (!originalWindow.contentEquals(windowHandle)) {
                 driver.switchTo().window(windowHandle);
                 break;
             }
@@ -503,28 +523,11 @@ public class MainPage extends BasePage {
         sleep(1000);
     }
 
-    public void scrollup(){
-        LOG.info("Scroll up to categorii");
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,-"+1500+")");
-    }
-
-    public void scrolldown2(){
-        LOG.info("Scroll down to prdousele zilei logo");
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1500)");
-    }
-
-    public void clickfirstvideo(){
+    public void clickfirstvideo() {
         LOG.info("Play first video");
         WebElement video1 = driver.findElement(firstvideo);
         driver.switchTo().frame(video1);
         driver.findElement(firstvideo).click();
-        driver.switchTo().frame(0);
         driver.switchTo().defaultContent();
     }
-
-
-
-
 }
