@@ -77,7 +77,8 @@ public class MainPage extends BasePage {
     private By resigilate = By.xpath("//div[normalize-space()='Vezi mai multe resigilate']");
     private By refurbished = By.xpath("//div[normalize-space()='Vezi produse refurbished']");
     private By partener = By.xpath("//a[@rel='nofollow noopener']");
-    private By firstvideo = By.xpath("//div[@class='video']/iframe[@src='https://www.youtube.com/embed?list=UU3vxBxz3JJWDHhRTXTi-XJw&playnext=1&index=1']");
+    private By firstvideo = By.xpath("//div[@class='video']/iframe");
+    private By videoone = By.xpath("//div[@class='video']");
 
     public boolean isLogoDisplayed() {
         LOG.info("Verify if logo is displayed");
@@ -527,7 +528,7 @@ public class MainPage extends BasePage {
         LOG.info("Play first video");
         WebElement video1 = driver.findElement(firstvideo);
         driver.switchTo().frame(video1);
-        driver.findElement(firstvideo).click();
+        driver.findElement(videoone).click();
         driver.switchTo().defaultContent();
     }
 }
