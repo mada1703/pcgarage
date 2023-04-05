@@ -77,9 +77,6 @@ public class ComandaTest extends BaseTest {
         LOG.info("Click adauga in cos button");
         comandaPage.clickcumpara();
 
-        LOG.info("Click deschidere colet checkmark");
-        comandaPage.clickdeschiderecolet();
-
         LOG.info("Click nr bucati dropdown menu");
         comandaPage.selectBucati(bucati);
 

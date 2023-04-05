@@ -10,7 +10,7 @@ import static pages.BasePage.driver;
 import static pages.BasePage.getBaseUrl;
 
 public class AutentificareTest extends BaseTest {
-    private String newUrl = getBaseUrl() + "";
+    private String newUrl = getBaseUrl();
     private static final Logger LOG = LoggerFactory.getLogger(AutentificareTest.class);
 
 
@@ -62,6 +62,9 @@ public class AutentificareTest extends BaseTest {
 
         LOG.info("Click Creeaza cont button");
         autentificarePage.clickCreearebutton();
+
+        LOG.info("Verify if the error message is displayed");
+        Assert.assertTrue(autentificarePage.isErrorMessageDisplayed(),"Error message is not displayed");
 
         LOG.info("Navigate no1 back");
         autentificarePage.clickBack();

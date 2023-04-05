@@ -79,6 +79,9 @@ public class MainPage extends BasePage {
     private By partener = By.xpath("//a[@rel='nofollow noopener']");
     private By firstvideo = By.xpath("//div[@class='video']/iframe");
     private By videoone = By.xpath("//div[@class='video']");
+    private By youtube = By.xpath("//a[normalize-space()='YouTube']");
+    private By facebook = By.xpath("//a[@class='facebook']");
+    private By instagram = By.xpath("//a[normalize-space()='Instagram']");
 
     public boolean isLogoDisplayed() {
         LOG.info("Verify if logo is displayed");
@@ -122,7 +125,7 @@ public class MainPage extends BasePage {
         driver.navigate().back();
     }
 
-    public void clickSlidingImages(){
+    public void clickSlidingImages() {
         LOG.info("Click second image button");
         driver.findElement(clickimage2).click();
         sleep(500);
@@ -524,11 +527,59 @@ public class MainPage extends BasePage {
         sleep(1000);
     }
 
-    public void clickfirstvideo() {
-        LOG.info("Play first video");
-        WebElement video1 = driver.findElement(firstvideo);
-        driver.switchTo().frame(video1);
-        driver.findElement(videoone).click();
-        driver.switchTo().defaultContent();
+//    public void clickfirstvideo() {
+//        LOG.info("Play first video");
+//        WebElement video1 = driver.findElement(firstvideo);
+//        driver.switchTo().frame(video1);
+//        driver.findElement(videoone).click();
+//        driver.switchTo().defaultContent();
+//    }
+
+    public void clickyoutubelink() {
+        LOG.info("Click the youtube link button");
+        driver.findElement(youtube).click();
+        String originalWindow = driver.getWindowHandle();
+        for (String windowHandle : driver.getWindowHandles()) {
+            if (!originalWindow.contentEquals(windowHandle)) {
+                driver.switchTo().window(windowHandle);
+                break;
+            }
+        }
+        driver.switchTo().window(originalWindow);
     }
+
+    public void clickfacebooklink(){
+        LOG.info("Click the facebook link button");
+        driver.findElement(facebook).click();
+        String originalWindow = driver.getWindowHandle();
+        for (String windowHandle : driver.getWindowHandles()) {
+            if (!originalWindow.contentEquals(windowHandle)) {
+                driver.switchTo().window(windowHandle);
+                break;
+            }
+        }
+        driver.switchTo().window(originalWindow);
+    }
+
+    public void clickinstagramlink(){
+        LOG.info("Click the instagram link button");
+        driver.findElement(instagram).click();
+        String originalWindow = driver.getWindowHandle();
+        for (String windowHandle : driver.getWindowHandles()) {
+            if (!originalWindow.contentEquals(windowHandle)) {
+                driver.switchTo().window(windowHandle);
+                break;
+            }
+        }
+        driver.switchTo().window(originalWindow);
+        sleep(1000);
+    }
+
+    public void scrollup() {
+        LOG.info("Scroll up to main view of the main page");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,-1500)");
+    }
+
+
 }

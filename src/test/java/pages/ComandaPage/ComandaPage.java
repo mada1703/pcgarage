@@ -27,7 +27,6 @@ public class ComandaPage extends BasePage {
     private By decreasing = By.xpath("//option[@value='pretd']");
     private By iphone = By.xpath("//img[@alt='Telefon Mobil Apple iPhone 14 Pro Dual SIM 5G 6GB 1TB Deep Purple ']");
     private By cumpara = By.xpath("//div[@class='specialButtons']//div[@title='Cumpara Telefon Mobil Apple iPhone 14 Pro Dual SIM 5G 6GB 1TB Deep Purple']");
-    private By deschidere = By.id("deschide_colet_74653290966214266f06aaebd94379b2b06c505");
     private By bucati = By.xpath("//select[@name='cart_quantity[]']");
     private By inputnume = By.id("fullname");
     private By inputtelehponenumber = By.id("telephone");
@@ -133,12 +132,6 @@ public class ComandaPage extends BasePage {
     public void clickcumpara(){
         LOG.info("Click adauga in cos button");
         driver.findElement(cumpara).click();
-        sleep(1000);
-    }
-
-    public void clickdeschiderecolet(){
-        LOG.info("Click deschidere colet checkmark");
-        driver.findElement(deschidere).click();
         sleep(1000);
     }
 

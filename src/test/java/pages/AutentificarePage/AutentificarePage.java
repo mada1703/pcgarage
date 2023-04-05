@@ -28,6 +28,7 @@ public class AutentificarePage extends BasePage {
     private By oras = By.id("city");
     private By termeni = By.xpath("//input[@name='termeni']");
     private By creare = By.xpath("//button[normalize-space()='Creeaza cont']");
+    private final By errormsg = By.xpath("//span[@class='eroareafis']");
 
 
 
@@ -112,9 +113,17 @@ public class AutentificarePage extends BasePage {
         driver.navigate().back();
     }
 
+    public boolean isErrorMessageDisplayed(){
+        LOG.info("Verify if error message is displayed");
+        return driver.findElement(errormsg).isDisplayed();
+
+    }
+
     public void click2Back (){
         LOG.info("Clicking back twice in browser");
         driver.navigate().back();
     }
+
+
 
 }

@@ -11,7 +11,7 @@ import static pages.BasePage.getBaseUrl;
 
 public class MainPageTest extends BaseTest {
 
-    private String newUrl = getBaseUrl() + "";
+    private String newUrl = getBaseUrl();
     private static final Logger LOG = LoggerFactory.getLogger(MainPageTest.class);
 
 
@@ -25,7 +25,7 @@ public class MainPageTest extends BaseTest {
         Assert.assertTrue(mainPage.isLogoDisplayed(), "Logo is not displayed");
 
         LOG.info("Check search field");
-        Assert.assertTrue(mainPage.isSearchFieldDisplayed(),"Search field is not displayed");
+        Assert.assertTrue(mainPage.isSearchFieldDisplayed(), "Search field is not displayed");
 
         LOG.info("Check account logo");
         Assert.assertTrue(mainPage.isAccountLogoDisplayed(), "Account logo is not displayed");
@@ -241,9 +241,20 @@ public class MainPageTest extends BaseTest {
         mainPage.clickpartener();
         mainPage.switchToNewTabWindow();
 
-        LOG.info("Play the first video");
-        mainPage.clickfirstvideo();
+//        LOG.info("Play the first video");
+//        mainPage.clickfirstvideo();
 
+        LOG.info("Click the youtube link and return to main page");
+        mainPage.clickyoutubelink();
+
+        LOG.info("Click the facebook link and return to main page");
+        mainPage.clickfacebooklink();
+
+        LOG.info("Click the instagram link and return to main page");
+        mainPage.clickinstagramlink();
+
+        LOG.info("Scroll up to the main view of the main page");
+        mainPage.scrollup();
 
 
     }
