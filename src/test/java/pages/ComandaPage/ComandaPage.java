@@ -9,9 +9,22 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
 
+import java.util.concurrent.TimeUnit;
+
 public class ComandaPage extends BasePage {
     public static final Logger LOG = LoggerFactory.getLogger(ComandaPage.class);
     public static ComandaPage instance;
+
+
+    private ComandaPage(){
+    }
+
+    public static ComandaPage getInstance(){
+        if (instance == null){
+            instance = new ComandaPage();
+        }
+        return instance;
+    }
 
     private By logo = By.id("logo_head");
     private By telefoanemenu = By.xpath("//a[normalize-space()='Telefoane Mobile & Gadget']");
@@ -28,27 +41,18 @@ public class ComandaPage extends BasePage {
     private By iphone = By.xpath("//img[@alt='Telefon Mobil Apple iPhone 14 Pro Dual SIM 5G 6GB 1TB Deep Purple ']");
     private By cumpara = By.xpath("//div[@class='specialButtons']//div[@title='Cumpara Telefon Mobil Apple iPhone 14 Pro Dual SIM 5G 6GB 1TB Deep Purple']");
     private By bucati = By.xpath("//select[@name='cart_quantity[]']");
+    private By adaugaadresa= By.xpath("//div[@class='block-section']//div[@class='radio_value adaugaadresa'][normalize-space()='Adauga o adresa']");
     private By inputnume = By.id("fullname");
-    private By inputtelehponenumber = By.id("telephone");
-    private By inputemail = By.xpath("//div[@class='value']//input[@id='email_address']");
-    private By inputadresa = By.xpath("//input[@id='street_address_l']");
-    private By judet = By.xpath("//select[@id='entry_suburb_l']");
-    private By localitate = By.xpath("//select[@id='city_l']");
+    private By inputtelehponenumber = By.id("phone");
+    private By inputadresa = By.xpath("//input[@id='adresaInput']");
+    private By judet = By.xpath("//select[@id='judetadr']");
+    private By localitate = By.xpath("//select[@id='localitateadr']");
+    private By codpostal = By.id("codpostal");
+    private By greenadauga = By.xpath("//a[normalize-space()='Adauga']");
     private By ramburs = By.id("plata2");
     private By informatii = By.xpath("//textarea[@name='comments']");
-    private By conditii = By.id("read_retur");
+    private By conditii = By.xpath("//input[@id='read_retur']");
     private By declaratie = By.id("e_major");
-
-
-    private ComandaPage(){
-    }
-
-    public static ComandaPage getInstance(){
-        if (instance == null){
-            instance = new ComandaPage();
-        }
-        return instance;
-    }
 
     public boolean islogodisplayed(){
         LOG.info("Verify if logo is displayed");
@@ -132,20 +136,24 @@ public class ComandaPage extends BasePage {
     public void clickcumpara(){
         LOG.info("Click adauga in cos button");
         driver.findElement(cumpara).click();
-        sleep(1000);
     }
 
     public void selectBucati(String selectBucati){
         LOG.info("Select nr bucati dropdown menu");
         Select newBucati = new Select(driver.findElement(bucati));
         newBucati.selectByValue(selectBucati);
-        sleep(500);
     }
 
     public void scrolldown3(){
         LOG.info("Scroll down to date cont");
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,500)");
+        sleep(2000);
+    }
+
+    public void clickadaugaadresa(){
+        LOG.info("Click adauga adresa button");
+        driver.findElement(adaugaadresa).click();
     }
 
     public void typeInFullname(String fullname){
@@ -158,17 +166,6 @@ public class ComandaPage extends BasePage {
         driver.findElement(inputtelehponenumber).sendKeys(telephonenumber);
     }
 
-    public void typeInEmail(String email){
-        LOG.info("Type in email address");
-        driver.findElement(inputemail).sendKeys(email);
-    }
-
-    public void scrolldown4(){
-        LOG.info("Scroll down to date livrare");
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,500)");
-    }
-
     public void typeInAdresa(String adresa){
         LOG.info("Type in adresa");
         driver.findElement(inputadresa).sendKeys(adresa);
@@ -178,13 +175,23 @@ public class ComandaPage extends BasePage {
         LOG.info("Select judet dropdown menu");
         Select newJudet = new Select(driver.findElement(judet));
         newJudet.selectByValue(selectJudet);
-        sleep(1000);
     }
 
     public void selectLocalitate(String selectLocalitate){
         LOG.info("Select localitate dropdown menu");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Select newLocalitate = new Select(driver.findElement(localitate));
         newLocalitate.selectByValue(selectLocalitate);
+    }
+
+    public void inputcodpostal(String Codpostal){
+        LOG.info("Input cod postal in the cod postal field");
+        driver.findElement(codpostal).sendKeys(Codpostal);
+    }
+
+    public void clickgreenadauga(){
+        LOG.info("Click the green adauga button");
+        driver.findElement(greenadauga).click();
     }
 
     public void scrolldown5(){
@@ -199,18 +206,6 @@ public class ComandaPage extends BasePage {
         driver.findElement(ramburs).click();
     }
 
-    public void typeInComentarii(String comentarii){
-        LOG.info("Type in alte informatii");
-        driver.findElement(informatii).sendKeys(comentarii);
-
-    }
-
-    public void scrolldown6(){
-        LOG.info("Scroll down to conditii");
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,500)");
-    }
-
     public void clickconditi(){
         LOG.info("Click conditii de returnare checkmark");
         driver.findElement(conditii).click();
@@ -220,4 +215,17 @@ public class ComandaPage extends BasePage {
         LOG.info("Click declaratie 18 ani");
         driver.findElement(declaratie).click();
     }
+
+    public void typeInComentarii(String comentarii){
+        LOG.info("Type in alte informatii");
+        driver.findElement(informatii).sendKeys(comentarii);
+    }
+
+    public void scrolldown6(){
+        LOG.info("Scroll down to submit");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,500)");
+    }
+
+
 }

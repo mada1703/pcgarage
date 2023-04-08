@@ -27,6 +27,7 @@ public class ComandaTest extends BaseTest {
         String adresa = "str. Theodor Aman, nr. 7, bl.97, sc.C, ap.10";
         String judet = "Dolj";
         String localitate = "Filiasi";
+        String Codpostal = "200389";
         String comentarii = "Doresc sa fiu contactat telefonic pentru finalizarea comenzii";
 
         ComandaPage comandaPage = ComandaPage.getInstance();
@@ -83,17 +84,14 @@ public class ComandaTest extends BaseTest {
         LOG.info("Scroll down 3 to date cont");
         comandaPage.scrolldown3();
 
+        LOG.info("Click adauga adresa button");
+        comandaPage.clickadaugaadresa();
+
         LOG.info("Input full name in the name field");
         comandaPage.typeInFullname(fullname);
 
         LOG.info("Input telephone number");
         comandaPage.typeInTelephonenumber(telephonenumber);
-
-        LOG.info("Input email address");
-        comandaPage.typeInEmail(email);
-
-        LOG.info("Scroll down 4 to date livrare");
-        comandaPage.scrolldown4();
 
         LOG.info("Input adresa");
         comandaPage.typeInAdresa(adresa);
@@ -104,23 +102,31 @@ public class ComandaTest extends BaseTest {
         LOG.info("Select localitate");
         comandaPage.selectLocalitate(localitate);
 
+        LOG.info("Input cod postal");
+        comandaPage.inputcodpostal(Codpostal);
+
+        LOG.info("Click green adaug button");
+        comandaPage.clickgreenadauga();
+
         LOG.info("Scroll down 5 to metoda de plata");
         comandaPage.scrolldown5();
 
         LOG.info("Click ramburs");
         comandaPage.clickramburs();
 
-        LOG.info("Type in alte informatii");
-        comandaPage.typeInComentarii(comentarii);
-
-        LOG.info("Scroll down 6 to conditii");
-        comandaPage.scrolldown6();
-
         LOG.info("Click conditii de retur checkmark");
         comandaPage.clickconditi();
 
         LOG.info("Click declaratie 18 ani");
         comandaPage.click18ani();
+
+        LOG.info("Type in alte informatii");
+        comandaPage.typeInComentarii(comentarii);
+
+        LOG.info("Scroll down 6 to metoda de plata");
+        comandaPage.scrolldown6();
+
+
 
     }
 }

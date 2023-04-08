@@ -117,7 +117,6 @@ public class MainPage extends BasePage {
         LOG.info("Type in searched product");
         driver.findElement(insertsearch).sendKeys(product);
         driver.findElement(clicksearch).click();
-        sleep(1000);
     }
 
     public void clickSearchBack() {
@@ -126,17 +125,10 @@ public class MainPage extends BasePage {
     }
 
     public void clickSlidingImages() {
-        LOG.info("Click second image button");
+        LOG.info("Click all the buttons with images");
         driver.findElement(clickimage2).click();
-        sleep(500);
         driver.findElement(clickimage3).click();
-        sleep(500);
         driver.findElement(clickimage4).click();
-        sleep(500);
-        driver.findElement(clickimage5).click();
-        sleep(500);
-        driver.findElement(clickimage).click();
-        sleep(500);
     }
 
     public void hoverOnLaptopuriMenu() {
@@ -149,7 +141,6 @@ public class MainPage extends BasePage {
     public void clickTablete() {
         LOG.info("Click tablete button");
         driver.findElement(tablete).click();
-        sleep(500);
     }
 
     public void clickTableteBack() {
@@ -167,7 +158,6 @@ public class MainPage extends BasePage {
     public void clickSmartwatch() {
         LOG.info("Click smartwatch button");
         driver.findElement(smartwatch).click();
-        sleep(500);
     }
 
     public void clickSmartwatchBack() {
@@ -185,7 +175,6 @@ public class MainPage extends BasePage {
     public void clickMirrorless() {
         LOG.info("Click aparate foto mirrorless button");
         driver.findElement(mirrorless).click();
-        sleep(500);
     }
 
     public void clickMirrorlessBack() {
@@ -203,7 +192,6 @@ public class MainPage extends BasePage {
     public void clickMouse() {
         LOG.info("Click mouse button");
         driver.findElement(mouse).click();
-        sleep(500);
     }
 
     public void clickMouseBack() {
@@ -221,7 +209,6 @@ public class MainPage extends BasePage {
     public void clickMonitoare() {
         LOG.info("Click monitoare button");
         driver.findElement(monitoare).click();
-        sleep(500);
     }
 
     public void clickMonitoareBack() {
@@ -239,7 +226,6 @@ public class MainPage extends BasePage {
     public void clickRoutere() {
         LOG.info("Click routere button");
         driver.findElement(routere).click();
-        sleep(500);
     }
 
     public void clickRoutereBack() {
@@ -257,7 +243,6 @@ public class MainPage extends BasePage {
     public void clickAragazuri() {
         LOG.info("Click aragazuri button");
         driver.findElement(aragazuri).click();
-        sleep(500);
     }
 
     public void clickAragazuriBack() {
@@ -275,7 +260,6 @@ public class MainPage extends BasePage {
     public void clickMixere() {
         LOG.info("Click mixere button");
         driver.findElement(mixere).click();
-        sleep(500);
     }
 
     public void clickMixereBack() {
@@ -293,7 +277,6 @@ public class MainPage extends BasePage {
     public void clickCarti() {
         LOG.info("Click carti button");
         driver.findElement(carti).click();
-        sleep(500);
     }
 
     public void clickCartiBack() {
@@ -311,7 +294,6 @@ public class MainPage extends BasePage {
     public void clickUscatoare() {
         LOG.info("Click uscatoare button");
         driver.findElement(uscatoare).click();
-        sleep(500);
     }
 
     public void clickUscatoareBack() {
@@ -329,7 +311,6 @@ public class MainPage extends BasePage {
     public void clickSampoane() {
         LOG.info("Click sampoane button");
         driver.findElement(sampon).click();
-        sleep(500);
     }
 
     public void clickSampoaneBack() {
@@ -347,7 +328,6 @@ public class MainPage extends BasePage {
     public void clickCeasuriBarbatesti() {
         LOG.info("Click ceasuri barbatesti button");
         driver.findElement(ceasuribarbatesti).click();
-        sleep(500);
     }
 
     public void clickCeasuriBarbatestiBack() {
@@ -365,7 +345,6 @@ public class MainPage extends BasePage {
     public void clickSucuri() {
         LOG.info("Click sucuri button");
         driver.findElement(sucuri).click();
-        sleep(500);
     }
 
     public void clickSucuriBack() {
@@ -383,7 +362,6 @@ public class MainPage extends BasePage {
     public void clickAnvelope() {
         LOG.info("Click anvelope button");
         driver.findElement(anvelope).click();
-        sleep(500);
     }
 
     public void clickAnvelopeBack() {
@@ -401,7 +379,6 @@ public class MainPage extends BasePage {
     public void clickTriciclete() {
         LOG.info("Click triciclete button");
         driver.findElement(triciclete).click();
-        sleep(500);
     }
 
     public void clickTricicleteBack() {
@@ -419,7 +396,6 @@ public class MainPage extends BasePage {
     public void clickPolizoare() {
         LOG.info("Click polizoare button");
         driver.findElement(polizoare).click();
-        sleep(500);
     }
 
     public void clickPolzioareBack() {
@@ -437,7 +413,6 @@ public class MainPage extends BasePage {
     public void clickPiscine() {
         LOG.info("Click piscine button");
         driver.findElement(piscine).click();
-        sleep(500);
     }
 
     public void clickPiscineBack() {
@@ -455,7 +430,6 @@ public class MainPage extends BasePage {
     public void clickCanapele() {
         LOG.info("Click canapele button");
         driver.findElement(canapele).click();
-        sleep(500);
     }
 
     public void clickCanapeleBack() {
@@ -512,19 +486,15 @@ public class MainPage extends BasePage {
     public void clickpartener() {
         LOG.info("Click Vreau sa devin partener button");
         driver.findElement(partener).click();
-    }
-
-    public void switchToNewTabWindow() {
-        LOG.info("Switch to new tab windows");
         String originalWindow = driver.getWindowHandle();
         for (String windowHandle : driver.getWindowHandles()) {
             if (!originalWindow.contentEquals(windowHandle)) {
                 driver.switchTo().window(windowHandle);
+                driver.close();
                 break;
             }
         }
         driver.switchTo().window(originalWindow);
-        sleep(1000);
     }
 
 //    public void clickfirstvideo() {
@@ -542,6 +512,7 @@ public class MainPage extends BasePage {
         for (String windowHandle : driver.getWindowHandles()) {
             if (!originalWindow.contentEquals(windowHandle)) {
                 driver.switchTo().window(windowHandle);
+                driver.close();
                 break;
             }
         }
@@ -555,6 +526,7 @@ public class MainPage extends BasePage {
         for (String windowHandle : driver.getWindowHandles()) {
             if (!originalWindow.contentEquals(windowHandle)) {
                 driver.switchTo().window(windowHandle);
+                driver.close();
                 break;
             }
         }
@@ -568,17 +540,17 @@ public class MainPage extends BasePage {
         for (String windowHandle : driver.getWindowHandles()) {
             if (!originalWindow.contentEquals(windowHandle)) {
                 driver.switchTo().window(windowHandle);
+                driver.close();
                 break;
             }
         }
         driver.switchTo().window(originalWindow);
-        sleep(1000);
     }
 
     public void scrollup() {
         LOG.info("Scroll up to main view of the main page");
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,-1500)");
+        js.executeScript("window.scrollBy(0,-2000)");
     }
 
 

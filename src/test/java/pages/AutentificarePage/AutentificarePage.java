@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
 
+import java.util.concurrent.TimeUnit;
 
 
 public class AutentificarePage extends BasePage {
@@ -31,18 +32,17 @@ public class AutentificarePage extends BasePage {
     private final By errormsg = By.xpath("//span[@class='eroareafis']");
 
 
-
     private AutentificarePage() {
     }
 
-    public static AutentificarePage getInstance(){
-        if (instance == null){
+    public static AutentificarePage getInstance() {
+        if (instance == null) {
             instance = new AutentificarePage();
         }
         return instance;
     }
 
-    public boolean isLogoDisplayed(){
+    public boolean isLogoDisplayed() {
         LOG.info("Verify if logo is displayed");
         return driver.findElement(logo).isDisplayed();
 
@@ -55,75 +55,75 @@ public class AutentificarePage extends BasePage {
         actions.moveToElement(contulmeuElement).perform();
     }
 
-    public void clickcontnou(){
+    public void clickcontnou() {
         LOG.info("Click cont nou button");
         driver.findElement(contnou).click();
     }
 
-    public void typeInNume(String Nume){
+    public void typeInNume(String Nume) {
         LOG.info("Type in nume");
         driver.findElement(firstname).sendKeys(Nume);
     }
 
-    public void typeInPrenume(String Prenume){
+    public void typeInPrenume(String Prenume) {
         LOG.info("Type in prenume");
         driver.findElement(lastname).sendKeys(Prenume);
     }
 
-    public void typeInEmail(String Email){
+    public void typeInEmail(String Email) {
         LOG.info("Type in email");
         driver.findElement(email).sendKeys(Email);
     }
 
-    public void typeInTelephone(String Telefon){
+    public void typeInTelephone(String Telefon) {
         LOG.info("Type in telephone");
         driver.findElement(telefon).sendKeys(Telefon);
     }
 
-    public void typeInAddress(String Adresa){
+    public void typeInAddress(String Adresa) {
         LOG.info("Type in adresa");
         driver.findElement(adresa).sendKeys(Adresa);
     }
 
-    public void selectJudet(String Judet){
+    public void selectJudet(String Judet) {
         LOG.info("Select judet");
         Select newJudet = new Select(driver.findElement(judet));
         newJudet.selectByValue(Judet);
-        sleep(250);
+
     }
 
-    public void selectOras(String Oras){
+    public void selectOras(String Oras) {
         LOG.info("Select oras");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Select newOras = new Select(driver.findElement(oras));
         newOras.selectByValue(Oras);
     }
 
-    public void clickTermenicheckmark(){
+    public void clickTermenicheckmark() {
         LOG.info("Click termeni checkmark");
         driver.findElement(termeni).click();
     }
 
-    public void clickCreearebutton(){
+    public void clickCreearebutton() {
         LOG.info("Click Creeaza cont button");
         driver.findElement(creare).click();
     }
 
-    public void clickBack (){
+    public void clickBack() {
         LOG.info("Clicking back once in browser");
         driver.navigate().back();
     }
 
-    public boolean isErrorMessageDisplayed(){
+    public boolean isErrorMessageDisplayed() {
         LOG.info("Verify if error message is displayed");
         return driver.findElement(errormsg).isDisplayed();
 
     }
 
-    public void click2Back (){
+    public void click2Back() {
         LOG.info("Clicking back twice in browser");
         driver.navigate().back();
     }
-
 
 
 }

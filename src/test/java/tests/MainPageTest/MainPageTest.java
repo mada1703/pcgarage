@@ -239,7 +239,6 @@ public class MainPageTest extends BaseTest {
 
         LOG.info("Switch to new window");
         mainPage.clickpartener();
-        mainPage.switchToNewTabWindow();
 
 //        LOG.info("Play the first video");
 //        mainPage.clickfirstvideo();
@@ -249,6 +248,8 @@ public class MainPageTest extends BaseTest {
 
         LOG.info("Click the facebook link and return to main page");
         mainPage.clickfacebooklink();
+        mainPage.scrolldown();
+
 
         LOG.info("Click the instagram link and return to main page");
         mainPage.clickinstagramlink();

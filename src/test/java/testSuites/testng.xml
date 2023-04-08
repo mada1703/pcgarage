@@ -9,6 +9,8 @@
             </class>
             <class name="tests.ConectareTest.ConectareTest">
             </class>
+            <class name="tests.CompareTest.CompareTest">
+            </class>
             <class name="tests.ComandaTest.ComandaTest">
             </class>
         </classes>
