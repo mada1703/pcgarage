@@ -9,6 +9,8 @@
             </class>
             <class name="tests.ReturTest.ReturTest">
             </class>
+            <class name="tests.ServiceTest.ServiceTest">
+            </class>
             <class name="tests.AutentificareTest.AutentificareTest">
             </class>
             <class name="tests.ConectareTest.ConectareTest">

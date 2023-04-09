@@ -1,54 +1,52 @@
-package pages.ReturPage;
+package pages.ServicePage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
 
-import java.util.List;
+public class ServicePage extends BasePage {
 
-public class ReturPage extends BasePage {
+    public static final Logger LOG = LoggerFactory.getLogger(ServicePage.class);
+    public static ServicePage instance;
 
-    public static final Logger LOG = LoggerFactory.getLogger(ReturPage.class);
-    public static ReturPage instance;
-
-    private ReturPage() {
+    private ServicePage() {
     }
 
-    public static ReturPage getInstance() {
+    public static ServicePage getInstance() {
         if (instance == null) {
-            instance = new ReturPage();
+            instance = new ServicePage();
         }
         return instance;
     }
 
-    private By returbutton = By.xpath("//a[@class='retur']");
+    private By servicebutton = By.xpath("//a[@class='service']");
     private By inputnume = By.id("nume");
     private By inputemail = By.id("email");
     private By inputphone = By.id("telefon");
     private By factura = By.id("nrfactura");
     private By nrfactura = By.id("nrFactFromModal");
     private By renuntabutton = By.xpath("//a[@href='#'][normalize-space()='Renunta']");
-    private By inputcantitate = By.id("cantitate");
-    private By calendar = By.id("datal");
-    private By motiv = By.id("motiv");
-    private By inputobservatii = By.id("obs");
+    private By serialnumber = By.id("sn");
+    private By descrieredefect = By.id("defect");
+    private By adresaridicare = By.id("ridicare_adresa");
+    private By selectjudet = By.id("ridicare_judet");
     private By conditiicheckbox = By.id("checkbox");
     private By file = By.id("fisiere_atasate");
 
-    public void clickretur() {
-        LOG.info("Click retur button");
-        driver.findElement(returbutton).click();
-    }
+
+    public void clickservicebutton(){
+        LOG.info("Click service button");
+        driver.findElement(servicebutton).click();
+        }
 
     public void scrolldown() {
-        LOG.info("Scroll down to formular retur");
+        LOG.info("Scroll down to formular service");
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1200)");
+        js.executeScript("window.scrollBy(0,1800)");
     }
 
     public void inputnume(String nume) {
@@ -81,37 +79,25 @@ public class ReturPage extends BasePage {
         driver.findElement(renuntabutton).click();
     }
 
-    public void clickcantitate(String cantitate) {
-        LOG.info("Click cantitate field");
-        driver.findElement(inputcantitate).click();
-        WebElement backspace = driver.findElement(inputcantitate);
-        backspace.sendKeys(Keys.BACK_SPACE);
-        driver.findElement(inputcantitate).sendKeys(cantitate);
+    public void inputserialnumber(String sn){
+        LOG.info("Input serial number in the serial number field");
+        driver.findElement(serialnumber).sendKeys(sn);
     }
 
-    public void clickdatalivrarii(String day) {
-        LOG.info("Click data livrarii produsului field");
-        driver.findElement(calendar).click();
-        List<WebElement> columns = driver.findElements(By.tagName("td"));
-        for (WebElement cell : columns) {
-            String celltext = cell.getText();
-            if (celltext.contains(day)) {
-                cell.click();
-                sleep(1000);
-                break;
-            }
-        }
+    public void inputdescrieredefect(String defect){
+        LOG.info("Input descriere defect in the defect field");
+        driver.findElement(descrieredefect).sendKeys(defect);
     }
 
-    public void selectmotivretur(String newmotiv) {
-        LOG.info("Select motiv retur");
-        Select newMotiv = new Select(driver.findElement(motiv));
-        newMotiv.selectByValue(newmotiv);
+    public void inputadresaridicare(String adresa){
+        LOG.info("Input adresa in the adresa ridicare colet field");
+        driver.findElement(adresaridicare).sendKeys(adresa);
     }
 
-    public void inputobservatii(String observatii){
-        LOG.info("Input observatii in the observatii field");
-        driver.findElement(inputobservatii).sendKeys(observatii);
+    public void selectJudet(String Judet) {
+        LOG.info("Select judet");
+        Select newJudet = new Select(driver.findElement(selectjudet));
+        newJudet.selectByValue(Judet);
     }
 
     public void clickconditiicheckbox(){
@@ -130,6 +116,3 @@ public class ReturPage extends BasePage {
         driver.navigate().back();
     }
 }
-
-
-
