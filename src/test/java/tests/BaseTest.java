@@ -7,6 +7,7 @@ import pages.ComandaPage.ComandaPage;
 import pages.ComparePage.ComparePage;
 import pages.ConectarePage.ConectarePage;
 import pages.MainPage.MainPage;
+import pages.RCAPage.RCAPage;
 
 
 public class BaseTest {
@@ -16,6 +17,7 @@ public class BaseTest {
     public MainPage mainPage = MainPage.getInstance();
     public ConectarePage conectarePage = ConectarePage.getInstance();
     public ComparePage comparePage = ComparePage.getInstance();
+    public RCAPage rcaPage = RCAPage.getInstance();
 
     @BeforeSuite
     public void init() {

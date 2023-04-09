@@ -83,6 +83,7 @@ public class MainPage extends BasePage {
     private By facebook = By.xpath("//a[@class='facebook']");
     private By instagram = By.xpath("//a[normalize-space()='Instagram']");
 
+
     public boolean isLogoDisplayed() {
         LOG.info("Verify if logo is displayed");
         return driver.findElement(logo).isDisplayed();

@@ -5,6 +5,8 @@
         <classes>
             <class name="tests.MainPageTest.MainPageTest">
             </class>
+            <class name="tests.RCATest.RCATest">
+            </class>
             <class name="tests.AutentificareTest.AutentificareTest">
             </class>
             <class name="tests.ConectareTest.ConectareTest">
