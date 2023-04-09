@@ -6,6 +6,7 @@ import pages.BasePage;
 import pages.ComandaPage.ComandaPage;
 import pages.ComparePage.ComparePage;
 import pages.ConectarePage.ConectarePage;
+import pages.ContactPage.ContactPage;
 import pages.MainPage.MainPage;
 import pages.RCAPage.RCAPage;
 import pages.ReturPage.ReturPage;
@@ -22,6 +23,7 @@ public class BaseTest {
     public RCAPage rcaPage = RCAPage.getInstance();
     public ReturPage returPage = ReturPage.getInstance();
     public ServicePage servicePage = ServicePage.getInstance();
+    public ContactPage contactPage = ContactPage.getInstance();
 
     @BeforeSuite
     public void init() {

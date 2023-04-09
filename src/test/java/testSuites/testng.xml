@@ -11,6 +11,8 @@
             </class>
             <class name="tests.ServiceTest.ServiceTest">
             </class>
+            <class name="tests.ContactTest.ContactTest">
+            </class>
             <class name="tests.AutentificareTest.AutentificareTest">
             </class>
             <class name="tests.ConectareTest.ConectareTest">
