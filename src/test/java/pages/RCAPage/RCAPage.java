@@ -36,6 +36,7 @@ public class RCAPage extends BasePage {
     private By inputanpermis = By.id("anpermis");
     private By inputetaj = By.id("etaj");
 
+
     public void clickrcabutton() {
         LOG.info("Click rca ieftin button");
         driver.findElement(rcabutton).click();
@@ -103,6 +104,11 @@ public class RCAPage extends BasePage {
     public void inputetaj(String etaj){
         LOG.info("Input etaj in the etaj field");
         driver.findElement(inputetaj).sendKeys(etaj);
+    }
+
+    public void clickBack() {
+        LOG.info("Clicking back in browser");
+        driver.navigate().back();
     }
 
 

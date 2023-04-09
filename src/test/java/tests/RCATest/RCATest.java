@@ -54,5 +54,8 @@ public class RCATest extends BaseTest {
 
         LOG.info("Input etaj in the etaj field");
         rcaPage.inputetaj(etaj);
+
+        LOG.info("Navigate back");
+        rcaPage.clickBack();
     }
 }
