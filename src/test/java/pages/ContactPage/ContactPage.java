@@ -2,7 +2,9 @@ package pages.ContactPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -91,6 +93,8 @@ public class ContactPage extends BasePage {
         LOG.info("Select intrebare from formular contact dropdown menu");
         Select newIntrebare = new Select(driver.findElement(formular));
         newIntrebare.selectByValue(intrebare);
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(continuabutton));
     }
 
     public void inputname(String nume){
@@ -111,12 +115,13 @@ public class ContactPage extends BasePage {
     public void clickcontinuabutton(){
         LOG.info("Click continua button");
         driver.findElement(continuabutton).click();
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(inputmesaj));
     }
 
     public void inputmesaj(String mesaj){
         LOG.info("Input mesaj");
         driver.findElement(inputmesaj).sendKeys(mesaj);
-        sleep(1000);
     }
 
     public void clickBack() {

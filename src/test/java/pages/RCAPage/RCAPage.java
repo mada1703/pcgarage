@@ -3,7 +3,9 @@ package pages.RCAPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -35,6 +37,7 @@ public class RCAPage extends BasePage {
     private By inputnumarci = By.id("numarci");
     private By inputanpermis = By.id("anpermis");
     private By inputetaj = By.id("etaj");
+    private By succesmsg = By.xpath("//div[normalize-space()='Datele tale au fost completate! Te rugam sa verifici datele!']");
 
 
     public void clickrcabutton() {
@@ -60,7 +63,8 @@ public class RCAPage extends BasePage {
         } catch (AWTException e) {
             e.printStackTrace();
         }
-        sleep(5000);
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(succesmsg));
     }
 
     public void scrolldown() {

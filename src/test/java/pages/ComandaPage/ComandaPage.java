@@ -41,10 +41,12 @@ public class ComandaPage extends BasePage {
     private By iphone = By.xpath("//img[@alt='Telefon Mobil Apple iPhone 14 Pro Dual SIM 5G 6GB 1TB Deep Purple ']");
     private By cumpara = By.xpath("//div[@class='specialButtons']//div[@title='Cumpara Telefon Mobil Apple iPhone 14 Pro Dual SIM 5G 6GB 1TB Deep Purple']");
     private By bucati = By.xpath("//select[@name='cart_quantity[]']");
+    private By subtotal = By.xpath("//b[normalize-space()='46,752']");
     private By adaugaadresa= By.xpath("//div[@class='block-section']//div[@class='radio_value adaugaadresa'][normalize-space()='Adauga o adresa']");
     private By inputnume = By.id("fullname");
     private By inputtelehponenumber = By.id("phone");
     private By inputadresa = By.xpath("//input[@id='adresaInput']");
+    private By displayadresa = By.xpath("//span[normalize-space()='Madalin EnacheEnache Madalin - str. Theodor Aman, nr. 7, bl.97, sc.C, ap.10 / Filiasi / Dolj / 0728078278']");
     private By judet = By.xpath("//select[@id='judetadr']");
     private By localitate = By.xpath("//select[@id='localitateadr']");
     private By codpostal = By.id("codpostal");
@@ -142,13 +144,13 @@ public class ComandaPage extends BasePage {
         LOG.info("Select nr bucati dropdown menu");
         Select newBucati = new Select(driver.findElement(bucati));
         newBucati.selectByValue(selectBucati);
+        sleep(2000);
     }
 
     public void scrolldown3(){
         LOG.info("Scroll down to date cont");
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,500)");
-        sleep(2000);
     }
 
     public void clickadaugaadresa(){
@@ -192,13 +194,13 @@ public class ComandaPage extends BasePage {
     public void clickgreenadauga(){
         LOG.info("Click the green adauga button");
         driver.findElement(greenadauga).click();
+        sleep(2000);
     }
 
     public void scrolldown5(){
         LOG.info("Scroll down to metoda de plata");
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,500)");
-        sleep(1000);
     }
 
     public void clickramburs(){
