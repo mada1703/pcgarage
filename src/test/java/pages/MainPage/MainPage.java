@@ -78,7 +78,7 @@ public class MainPage extends BasePage {
     private By refurbished = By.xpath("//div[normalize-space()='Vezi produse refurbished']");
     private By partener = By.xpath("//a[@rel='nofollow noopener']");
     private By firstvideo = By.xpath("//div[@class='video']/iframe");
-    private By videoone = By.xpath("//div[@class='video']");
+    private By videoone = By.xpath("//button[@aria-label='Play']");
     private By youtube = By.xpath("//a[normalize-space()='YouTube']");
     private By facebook = By.xpath("//a[@class='facebook']");
     private By instagram = By.xpath("//a[normalize-space()='Instagram']");
@@ -498,13 +498,13 @@ public class MainPage extends BasePage {
         driver.switchTo().window(originalWindow);
     }
 
-//    public void clickfirstvideo() {
-//        LOG.info("Play first video");
-//        WebElement video1 = driver.findElement(firstvideo);
-//        driver.switchTo().frame(video1);
-//        driver.findElement(videoone).click();
-//        driver.switchTo().defaultContent();
-//    }
+    public void clickfirstvideo() {
+        LOG.info("Play first video");
+        WebElement video1 = driver.findElement(firstvideo);
+        driver.switchTo().frame(video1);
+        driver.findElement(videoone).click();
+        driver.switchTo().defaultContent();
+    }
 
     public void clickyoutubelink() {
         LOG.info("Click the youtube link button");

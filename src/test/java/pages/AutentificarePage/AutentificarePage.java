@@ -2,6 +2,7 @@ package pages.AutentificarePage;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -102,6 +103,12 @@ public class AutentificarePage extends BasePage {
     public void clickTermenicheckmark() {
         LOG.info("Click termeni checkmark");
         driver.findElement(termeni).click();
+    }
+
+    public void scrolldown() {
+        LOG.info("Scroll down to creare cont");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,800)");
     }
 
     public void clickCreearebutton() {

@@ -240,8 +240,8 @@ public class MainPageTest extends BaseTest {
         LOG.info("Switch to new window");
         mainPage.clickpartener();
 
-//        LOG.info("Play the first video");
-//        mainPage.clickfirstvideo();
+        LOG.info("Play the first video");
+        mainPage.clickfirstvideo();
 
         LOG.info("Click the youtube link and return to main page");
         mainPage.clickyoutubelink();

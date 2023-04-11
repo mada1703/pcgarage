@@ -60,6 +60,9 @@ public class AutentificareTest extends BaseTest {
         LOG.info("Click termeni checkmark");
         autentificarePage.clickTermenicheckmark();
 
+        LOG.info("Scroll down to creare cont button");
+        rcaPage.scrolldown();
+
         LOG.info("Click Creeaza cont button");
         autentificarePage.clickCreearebutton();
 
