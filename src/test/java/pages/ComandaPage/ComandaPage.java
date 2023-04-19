@@ -201,7 +201,7 @@ public class ComandaPage extends BasePage {
         LOG.info("Scroll down to metoda de plata");
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,500)");
-        sleep(2000);
+        sleep(3000);
     }
 
     public void clickramburs(){
