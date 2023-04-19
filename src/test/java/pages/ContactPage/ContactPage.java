@@ -117,10 +117,12 @@ public class ContactPage extends BasePage {
         driver.findElement(continuabutton).click();
         WebDriverWait wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.presenceOfElementLocated(inputmesaj));
+        sleep(1000);
     }
 
     public void inputmesaj(String mesaj){
         LOG.info("Input mesaj");
+        driver.findElement(inputmesaj).click();
         driver.findElement(inputmesaj).sendKeys(mesaj);
     }
 
