@@ -502,6 +502,7 @@ public class MainPage extends BasePage {
         LOG.info("Play first video");
         WebElement video1 = driver.findElement(firstvideo);
         driver.switchTo().frame(video1);
+        sleep(500);
         driver.findElement(videoone).click();
         driver.switchTo().defaultContent();
     }
