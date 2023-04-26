@@ -22,7 +22,7 @@ public class ReturTest extends BaseTest {
         String phone = "0728078278";
         String numarfactura = "1234567890";
         String cantitate = "4";
-        String day = "18";
+        String day = "26";
         String newmotiv = "4";
         String observatii = "Doresc sa fiu contactat telefonic";
 

@@ -40,9 +40,9 @@ public class ComparePage extends BasePage {
     private By sterge2 = By.xpath("//a[@href='https://www.cel.ro/compara/6874666']");
     private By adaugare = By.xpath("//a[@class='addProducts']");
     private By magazin = By.xpath("//a[normalize-space()='Magazin']");
-    private By favorit3 = By.xpath("//div[@id='r7579164']");
+    private By favorit3 = By.xpath("//div[@id='r7413848']");
     private By favorit1checkmark = By.xpath("//input[@value='6874666']");
-    private By favorit3checkmark = By.xpath("//input[@value='7579164']");
+    private By favorit3checkmark = By.xpath("//input[@value='7487478']");
     private By rtx4090 = By.xpath("//a[@href='https://www.cel.ro/placa-video-asus-tuf-gaming-nvidia-geforce-rtx-4090-oc-edition-24gb-gddr6x-384-bit-dlss-3-0-tuf-rtx4090-o24g-pNyo0MDMoMA-l/']");
     private By pictureright = By.xpath("//a[@id='rarrow']");
     private By adaugacos = By.xpath("//div[@class='specialButtons']//span[contains(text(),'Adauga in cos')]");
