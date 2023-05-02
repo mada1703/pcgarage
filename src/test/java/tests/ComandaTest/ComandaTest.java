@@ -114,6 +114,9 @@ public class ComandaTest extends BaseTest {
         LOG.info("Click ramburs");
         comandaPage.clickramburs();
 
+        LOG.info("Scroll down 6 to metoda de plata");
+        comandaPage.scrolldown6();
+
         LOG.info("Click conditii de retur checkmark");
         comandaPage.clickconditi();
 
@@ -123,8 +126,8 @@ public class ComandaTest extends BaseTest {
         LOG.info("Type in alte informatii");
         comandaPage.typeInComentarii(comentarii);
 
-        LOG.info("Scroll down 6 to metoda de plata");
-        comandaPage.scrolldown6();
+        LOG.info("Scroll down 7 to metoda de plata");
+        comandaPage.scrolldown7();
 
 
 

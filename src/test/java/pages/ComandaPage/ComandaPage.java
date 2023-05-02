@@ -209,6 +209,13 @@ public class ComandaPage extends BasePage {
         driver.findElement(ramburs).click();
     }
 
+    public void scrolldown6() {
+        LOG.info("Scroll down to metoda de plata");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,500)");
+        sleep(1000);
+    }
+
     public void clickconditi(){
         LOG.info("Click conditii de returnare checkmark");
         driver.findElement(conditii).click();
@@ -224,7 +231,7 @@ public class ComandaPage extends BasePage {
         driver.findElement(informatii).sendKeys(comentarii);
     }
 
-    public void scrolldown6(){
+    public void scrolldown7(){
         LOG.info("Scroll down to submit");
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,500)");

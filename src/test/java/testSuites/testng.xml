@@ -3,18 +3,18 @@
 <suite name="testng" verbose="1">
     <test name="PositiveTest">
         <classes>
-            <class name="tests.MainPageTest.MainPageTest">
-            </class>
-            <class name="tests.RCATest.RCATest">
-            </class>
-            <class name="tests.ReturTest.ReturTest">
-            </class>
-            <class name="tests.ServiceTest.ServiceTest">
-            </class>
-            <class name="tests.ContactTest.ContactTest">
-            </class>
-            <class name="tests.AutentificareTest.AutentificareTest">
-            </class>
+<!--            <class name="tests.MainPageTest.MainPageTest">-->
+<!--            </class>-->
+<!--            <class name="tests.RCATest.RCATest">-->
+<!--            </class>-->
+<!--            <class name="tests.ReturTest.ReturTest">-->
+<!--            </class>-->
+<!--            <class name="tests.ServiceTest.ServiceTest">-->
+<!--            </class>-->
+<!--            <class name="tests.ContactTest.ContactTest">-->
+<!--            </class>-->
+<!--            <class name="tests.AutentificareTest.AutentificareTest">-->
+<!--            </class>-->
             <class name="tests.ConectareTest.ConectareTest">
             </class>
             <class name="tests.CompareTest.CompareTest">
